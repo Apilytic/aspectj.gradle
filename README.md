@@ -1,2 +1,2 @@
 # aspectj.gradle
-Fork of official aspectj plugin for gradle
+Fork of official the aspectj plugin for gradle
