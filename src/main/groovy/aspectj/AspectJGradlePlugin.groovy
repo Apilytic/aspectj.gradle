@@ -48,7 +48,7 @@ class AspectJGradlePlugin implements Plugin<Project> {
                 project.tasks.create(name: aspectTaskName, overwrite: true, description: "Compiles AspectJ Source for ${projectSourceSet.name} source set", type: Ajc) {
                     sourceSet = projectSourceSet
                     inputs.files(sourceSet.allJava)
-                    outputs.dir(sourceSet.output.classesDir)
+                    outputs.dir(sourceSet.java.outputDir)
                     aspectpath = project.configurations.findByName(namingConventions.getAspectPathConfigurationName(projectSourceSet))
                     ajInpath = project.configurations.findByName(namingConventions.getAspectInpathConfigurationName(projectSourceSet))
                 }
@@ -56,7 +56,7 @@ class AspectJGradlePlugin implements Plugin<Project> {
                 project.tasks[aspectTaskName].setDependsOn(project.tasks[javaTaskName].dependsOn)
                 project.tasks[aspectTaskName].dependsOn(project.tasks[aspectTaskName].aspectpath)
                 project.tasks[aspectTaskName].dependsOn(project.tasks[aspectTaskName].ajInpath)
-                project.tasks[javaTaskName].deleteAllActions()
+                project.tasks[javaTaskName].getActions().clear()
                 project.tasks[javaTaskName].dependsOn(project.tasks[aspectTaskName])
             }
         }
