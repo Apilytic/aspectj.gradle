@@ -13,3 +13,12 @@ repositories {
 
 dependencies {
 }
+
+gradlePlugin {
+    plugins {
+        aspectjGradle {
+            id = 'gradle.aspectj'
+            implementationClass = 'AspectJplugin'
+        }
+    }
+}
