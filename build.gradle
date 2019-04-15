@@ -23,3 +23,15 @@ gradlePlugin {
         }
     }
 }
+
+publishing {
+    repositories {
+        maven {
+            url "s3://gskillz-maven-repo"
+            credentials(AwsCredentials) {
+                accessKey ""
+                secretKey ""
+            }
+        }
+    }
+}
