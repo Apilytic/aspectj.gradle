@@ -29,8 +29,8 @@ publishing {
         maven {
             url "s3://gskillz-maven-repo"
             credentials(AwsCredentials) {
-                accessKey "AKIA5TUNJINLPBZDTXHH"
-                secretKey "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"
+                accessKey ""
+                secretKey ""
             }
         }
     }
