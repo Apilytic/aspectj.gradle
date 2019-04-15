@@ -135,11 +135,11 @@ class Ajc extends DefaultTask {
         logger.info("srcDirs $sourceSet.java.srcDirs")
 
         def iajcArgs = [classpath    : sourceSet.compileClasspath.asPath,
-                        destDir      : sourceSet.output.classesDir.absolutePath,
-                        s            : sourceSet.output.classesDir.absolutePath,
+                        destDir      : sourceSet.java.outputDir,
+                        s            : sourceSet.java.outputDir,
                         source       : project.convention.plugins.java.sourceCompatibility,
                         target       : project.convention.plugins.java.targetCompatibility,
-                        inpath       : sourceSet.output.classesDir.absolutePath,
+                        inpath       : sourceSet.java.outputDir,
                         xlint        : xlint,
                         fork         : 'false',
                         aspectPath   : aspectpath.asPath,

@@ -5,8 +5,8 @@ plugins {
     id 'groovy'
 }
 
-group 'aspectj'
-version '1.0-SNAPSHOT'
+group 'aspectjfork'
+version '1.1-SNAPSHOT'
 
 repositories {
     mavenCentral()
@@ -18,7 +18,7 @@ dependencies {
 gradlePlugin {
     plugins {
         aspectjGradle {
-            id = 'gradle.aspectj'
+            id = 'gradle.aspectjfork'
             implementationClass = 'aspectj.AspectJGradlePlugin'
         }
     }
@@ -29,8 +29,8 @@ publishing {
         maven {
             url "s3://gskillz-maven-repo"
             credentials(AwsCredentials) {
-                accessKey ""
-                secretKey ""
+                accessKey "AKIA5TUNJINLPBZDTXHH"
+                secretKey "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"
             }
         }
     }
