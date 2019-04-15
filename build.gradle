@@ -1,5 +1,6 @@
 plugins {
     id 'java-gradle-plugin'
+    id 'maven-publish'
     id 'idea'
     id 'groovy'
 }
@@ -18,7 +19,7 @@ gradlePlugin {
     plugins {
         aspectjGradle {
             id = 'gradle.aspectj'
-            implementationClass = 'AspectJplugin'
+            implementationClass = 'aspectj.AspectJGradlePlugin'
         }
     }
 }
